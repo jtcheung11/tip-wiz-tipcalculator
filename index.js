@@ -1,21 +1,26 @@
 // const axios = require('axios');
 
-//////grab elements in container 3//////
+
 //button
 const calcBtn = document.getElementById("calc-btn");
 const splitBtn = document.getElementById("split-btn");
 const clearBtn = document.getElementById("clear-btn");
 const clearBtn1 = document.getElementById("clear-btn1");
+
 //buttons for contact page
 const contactBtn = document.getElementById("contact-btn");
+
 //inputs
 const billAmount = document.getElementById("totalbill");
 const tipPercentage = document.getElementById("range");
 const splitBy = document.getElementById("dropid");
+
 //inputs for contact page
 //does this select all 3 inputs I have that have a class name of 'contactip'?
 const contactName = document.querySelectorAll(".contactip");
   console.log("contactName")
+
+
 //Slider value display
 const range = document.getElementById("range"),
   rangeV = document.getElementById("rangeV"),
@@ -83,8 +88,6 @@ const tipElement = (resdata) => {
 ///Container 5 - Splitting the bill
 const splitButton = () => {
   const totalWithTip = document.getElementById("total-final");
-  // console.log(document.getElementById('total-final'))
-  // console.log(totalWithTip.innerHTML)
   let body = {
     splitBy: splitBy.value,
     totalWithTip: totalWithTip.innerHTML.replace("$", ""),
@@ -95,13 +98,10 @@ const splitButton = () => {
 };
 
 const splitter = (resdata) => {
-  // console.log(resdata)
   const r = document.createElement("span");
   r.id = "total-split";
   var decimaler = decimalMaker(resdata);
-  //change below line to ${blank}
   var t = document.createTextNode(`$${decimaler} `);
-  // var t = document.createTextNode(`$${resdata}`)
   r.appendChild(t);
   document.getElementById("splittotal").appendChild(r);
 };
@@ -113,8 +113,6 @@ const clearFun = () => {
   let tip = document.getElementById("total-tip");
   tip.parentNode.removeChild(tip);
 
-  // let splitTotal =document.getElementById('total-split')
-  //   splitTotal.parentNode.removeChild(splitTotal)
   alert("Oldest Result Cleared!");
 };
 
@@ -128,7 +126,9 @@ const clearFun1 = () => {
 const subForm = () => {
   let body = { contactName: contactName.value };
   console.log(body);
-  axios.post("http://localhost:5500/contact", body).then(res(200));
+  axios
+  .post("http://localhost:5500/contact", body)
+  .then(res(200));
 };
 
 calcBtn.addEventListener("click", calcButton);
@@ -136,5 +136,6 @@ calcBtn.addEventListener("click", tipAmt);
 splitBtn.addEventListener("click", splitButton);
 clearBtn.addEventListener("click", clearFun);
 clearBtn1.addEventListener("click", clearFun1);
+
 //event listener for contact page
 contactBtn.addEventListener("click", subForm);
