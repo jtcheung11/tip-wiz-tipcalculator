@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;500;600&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+    <title>Tip Wiz</title>
+    <link rel='stylesheet' href='styles.css'/>
+</head>
+<body>
+    <div class = 'container1'>
+    <div class = 'title container' >
+        <h1 id='title'> Tip Wiz </h1>
+    </div>
+    <div class = 'container2'>
+        <nav id=nav>
+            <ul>
+              <li>Home</li>
+              <li><a href='index.html' class='external-link' ></a>Calculate</li>
+              <li><a href='contact.html' class ='external-link' ></a>Contact</li>
+            </ul>
+          </nav>
+        <div class ='container3'>
+            
+            <label id='billamount' for='billamount'>Bill Amount:</label>
+            <input id='totalbill' class = 'bill-amt' name='billamount' type='number' min='0' max='10000000' placeholder='Amount of bill'>
+            <br>
+            <label id='billpercent' for='percentslider'>Tip %</label>
+            <!-- This section is creating a bubble that will display on the slider -->
+            
+            <div class="range-wrap">
+                <div class="range-value" id="rangeV"></div>
+                <input name="percentslider" id="range" type="range" min="0" max="100" value="20" step="1">
+            </div>
+            <button class='button' id='calc-btn'>Calculate</button>
+        </div>    
+        <div class ='container4'>
+            <h2> Results</h2>
+            <!-- need to figure out how to add input from container3  -->
+            <span id='tipmoney'> Tip Amount:</span>
+            <span id='totwithtip'>Total with Tip:</span>
+        </div>
+        <div class ='container5'>  
+            <section id='splitnum'>
+                <span class='leftsplit'>
+                    <label id='splitby' for='dropdown'>Split by how many?</label>
+                    <select name='dropdown' id='dropid'>
+                        <option value="none" selected disabled hidden>Select a number</option>
+                        <option value='2' >2</option>
+                        <option value='3' >3</optoin>
+                            <option value='4' >4</option>
+                            <option value='5' >5</option>
+                            <option value='6' >6</option>
+                            <option value='7' >7</option>
+                            <option value='8' >8</option>
+                            <option value='9' >9</option>
+                            <option value='10' >10</optoin>
+                                <option value='11' >11</option>
+                                <option value='12' >12</option>
+                                <option value='13' >13</optoin>
+                                    <option value='14' >14</option>
+                                    <option value='15' >15</option>
+                                </select>
+                            </span>
+                        </section>
+                        <span class='centersplit'>
+                            <button class='button' id='split-btn'>Split</button>
+                        </span>
+                        <span class='rightsplit' id='splittotal'>Total per Person:</span>
+                    </div>
+                    <br>
+                    <div class='container6'>
+                        <button class = 'button' id='clear-btn'>Clear Results</button>
+                        <button class = 'button' id='clear-btn1'>Clear Split</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
