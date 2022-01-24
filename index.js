@@ -1,5 +1,3 @@
-// const axios = require('axios');
-
 
 //button
 const calcBtn = document.getElementById("calc-btn");
@@ -7,19 +5,11 @@ const splitBtn = document.getElementById("split-btn");
 const clearBtn = document.getElementById("clear-btn");
 const clearBtn1 = document.getElementById("clear-btn1");
 
-//buttons for contact page
-// const contactBtn = document.getElementById("contact-btn");
 
 //inputs
 const billAmount = document.getElementById("totalbill");
 const tipPercentage = document.getElementById("range");
 const splitBy = document.getElementById("dropid");
-
-//inputs for contact page
-//does this select all 3 inputs I have that have a class name of 'contactip'?
-// const contactName = document.querySelectorAll(".contactip");
-//   console.log("contactName")
-
 
 //Slider value display
 const range = document.getElementById("range"),
@@ -123,13 +113,6 @@ const clearFun1 = () => {
   alert("Oldest Split Cleared!");
 };
 
-// const subForm = () => {
-//   let body = { contactName: contactName.value };
-//   console.log(body);
-//   axios
-//   .post("http://localhost:5500/contact", body)
-//   .then(res(200));
-// };
 
 calcBtn.addEventListener("click", calcButton);
 calcBtn.addEventListener("click", tipAmt);
@@ -137,5 +120,3 @@ splitBtn.addEventListener("click", splitButton);
 clearBtn.addEventListener("click", clearFun);
 clearBtn1.addEventListener("click", clearFun1);
 
-//event listener for contact page
-// contactBtn.addEventListener("click", subForm);

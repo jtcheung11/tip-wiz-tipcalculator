@@ -2,18 +2,22 @@
 const contactBtn = document.getElementById("contact-btn");
 
 //inputs for contact page
-//does this select all 3 inputs I have that have a class name of 'contactip'?
-const contactForm = document.querySelectorAll(".contactip");
+const contactName = document.getElementById("input_name")
+const contactEmail = document.getElementById("input_email")
+const contactText = document.getElementById("input_text")
 
-console.log(contactForm)
   const subForm = () => {
-    
-    //will this make body all 3 inputs that have classname of contacttip?
-    let body = {contactForm: contactForm.value };
-    console.log(body);
+
+    let body = {
+        contactName: contactName.value,
+        contactEmail: contactEmail.value,
+        contactText: contactText.value,
+    };
+    // console.log(body);
     axios
     .post("http://localhost:5500/contact", body)
-    .then((res) => console.log(res));
+    .then((res) => console.log(res.body));
+    // alert("Recieved, we will be in contact soon.")
   };
 
   //event listener for contact page

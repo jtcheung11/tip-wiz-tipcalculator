@@ -15,11 +15,9 @@ module.exports = {
 
 
     tipAmount:(req,res) => {
-        // let indexed = parseFloat(tipAmt[0]).toFixed(2);
             let indexed = (Math.round(tipAmt[0] * 100) / 100).toFixed(2)
-        //     console.log(indexed)
             let sendStr = indexed.toString()
-        res.status(200).send(sendStr)//need to access index 0 or change tipAmt to only hold 1 item max
+        res.status(200).send(sendStr)
     },
 
     totalSplit: (req, res) => {
@@ -27,7 +25,6 @@ module.exports = {
         let splitBy = req.body.splitBy
         let intSplit = parseInt(finalBill) / parseInt(splitBy)
         let rounded =(Math.round(intSplit * 100) / 100).toFixed(2)
-        // let sendStr = intSplit.toString()
         let sendStr = rounded.toString()
                 res.status(200).send(sendStr)
     },
@@ -35,7 +32,9 @@ module.exports = {
     contactUs: (req, res) => {
         console.log(req.body)
         contactData.push(req.body)
-            res.status(200).send(req.body)
+        console.log(contactData)
+            res.status(200).send(req.body.value)
+            console.log(req.body.value)
 
     }
 }
