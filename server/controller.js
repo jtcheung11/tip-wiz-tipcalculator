@@ -30,11 +30,8 @@ module.exports = {
     },
 
     contactUs: (req, res) => {
-        console.log(req.body)
         contactData.push(req.body)
-        console.log(contactData)
             res.status(200).send(req.body.value)
-            console.log(req.body.value)
 
     }
 }
