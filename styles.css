@@ -273,11 +273,8 @@ h2 {
 /* Nav Bar */
 
 ul li{
-  display: inline;
+  display:inline;
   list-style: none;
-
-  /* position: center;
-  display: inline-flex; */
   padding: 5vw;
   font-size: 20px;
   
