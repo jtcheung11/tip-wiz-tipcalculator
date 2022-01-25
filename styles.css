@@ -388,8 +388,6 @@ svg {
   }
 
   /* the tip monkey text animation */
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
-
 svg {
     display: block;
     font: 80px 'Montserrat';
