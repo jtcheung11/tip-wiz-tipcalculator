@@ -1,17 +1,16 @@
 
-//button
 const calcBtn = document.getElementById("calc-btn");
 const splitBtn = document.getElementById("split-btn");
 const clearBtn = document.getElementById("clear-btn");
 const clearBtn1 = document.getElementById("clear-btn1");
 
 
-//inputs
 const billAmount = document.getElementById("totalbill");
 const tipPercentage = document.getElementById("range");
 const splitBy = document.getElementById("dropid");
 
-//Slider value display
+const space = " ";
+
 const range = document.getElementById("range"),
   rangeV = document.getElementById("rangeV"),
   setValue = () => {
@@ -57,7 +56,7 @@ const results = (resdata) => {
   const r = document.createElement("span");
   r.id = "total-final";
   var decimaler = decimalMaker(resdata);
-  var t = document.createTextNode(`$${decimaler} `);
+  var t = document.createTextNode(`$${decimaler}`);
   r.appendChild(t);
   document.getElementById("totwithtip").appendChild(r);
 };
@@ -70,7 +69,7 @@ const tipElement = (resdata) => {
   const r = document.createElement("span");
   r.id = "total-tip";
   var decimaler = decimalMaker(resdata);
-  var t = document.createTextNode(`$${decimaler} `);
+  var t = document.createTextNode(`$${decimaler}`);
   r.appendChild(t);
   document.getElementById("tipmoney").appendChild(r);
 };
