@@ -1,16 +1,15 @@
-
+//Inputs
 const calcBtn = document.getElementById("calc-btn");
 const splitBtn = document.getElementById("split-btn");
 const clearBtn = document.getElementById("clear-btn");
 const clearBtn1 = document.getElementById("clear-btn1");
 
-
+//Buttons
 const billAmount = document.getElementById("totalbill");
 const tipPercentage = document.getElementById("range");
 const splitBy = document.getElementById("dropid");
 
-const space = " ";
-
+//Slider
 const range = document.getElementById("range"),
   rangeV = document.getElementById("rangeV"),
   setValue = () => {
@@ -39,6 +38,11 @@ let decimalMaker = (x) => {
   }
 };
 
+//Tip request
+const tipAmt = () => {
+  axios.get("http://localhost:5500/tip").then((res) => tipElement(res.data));
+};
+
 /// Calculate button container 3
 const calcButton = () => {
   let body = {
@@ -51,7 +55,7 @@ const calcButton = () => {
     .then((res) => results(res.data));
 };
 
-//creating html for results using fuction named results
+//creating html for results(total)
 const results = (resdata) => {
   const r = document.createElement("span");
   r.id = "total-final";
@@ -59,12 +63,10 @@ const results = (resdata) => {
   var t = document.createTextNode(`$${decimaler}`);
   r.appendChild(t);
   document.getElementById("totwithtip").appendChild(r);
+  tipAmt()
 };
 
-const tipAmt = () => {
-  axios.get("http://localhost:5500/tip").then((res) => tipElement(res.data));
-};
-
+//creating html for results (tip)
 const tipElement = (resdata) => {
   const r = document.createElement("span");
   r.id = "total-tip";
@@ -114,7 +116,6 @@ const clearFun1 = () => {
 
 
 calcBtn.addEventListener("click", calcButton);
-calcBtn.addEventListener("click", tipAmt);
 splitBtn.addEventListener("click", splitButton);
 clearBtn.addEventListener("click", clearFun);
 clearBtn1.addEventListener("click", clearFun1);

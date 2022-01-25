@@ -7,7 +7,7 @@ module.exports = {
         let tipP = (req.body.tipPercentage)
         let tipA = (tipP/100) 
         let tipFinal = tipA * bill
-                tipAmt.unshift(tipFinal) //correct 
+                tipAmt.unshift(tipFinal)
         let finalB = parseInt(tipFinal) + parseInt(bill)
         let sendStr = finalB.toString()
                 res.status(200).send(sendStr)

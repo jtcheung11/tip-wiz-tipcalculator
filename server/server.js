@@ -13,8 +13,8 @@ const {
     contactUs
 } = require('./controller')
 
-app.post('/calculate', totalCalc)
 app.post('/split', totalSplit)
+app.post('/calculate', totalCalc)
 app.get('/tip', tipAmount)
 app.post('/contact', contactUs)
 
